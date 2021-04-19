@@ -8,6 +8,7 @@
       "name": "Education",
       "items": [
         {
+          "type": "timelineObject",
           "name": "Coding Academy",
           "dateRange": {
             "start": "2020-12-31T22:00:00.000Z",
@@ -27,20 +28,44 @@
       "name": "Skills",
       "items": [
         {
+          "type": "skill",
           "name": "Vue",
-          "projectsList": [
-            {"name": "Fiverr", "src": "www.github.com"},
-            {"name": "Mister Toy", "src": "www.github.com"}
-          ]
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Vue.js_Logo_2.svg/1200px-Vue.js_Logo_2.svg.png"
         },
         {
+          "type": "skill",
           "name": "React",
-          "dateRange": {
-            "start": "2017-06-30T21:00:00.000Z",
-            "end": "2015-08-30T21:00:00.000Z"
-          }
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Vue.js_Logo_2.svg/1200px-Vue.js_Logo_2.svg.png"
+        },
+        {
+          "type": "skill",
+          "name": "Javascript",
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Vue.js_Logo_2.svg/1200px-Vue.js_Logo_2.svg.png"
+        },
+        {
+          "type": "skill",
+          "name": "Github",
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Vue.js_Logo_2.svg/1200px-Vue.js_Logo_2.svg.png"
+        },
+        {
+          "type": "skill",
+          "name": "Node.js",
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Vue.js_Logo_2.svg/1200px-Vue.js_Logo_2.svg.png"
+        },
+        {
+          "type": "skill",
+          "name": "TypeScript",
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Vue.js_Logo_2.svg/1200px-Vue.js_Logo_2.svg.png"
+        },
+        {
+          "type": "skill",
+          "name": "CSS",
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Vue.js_Logo_2.svg/1200px-Vue.js_Logo_2.svg.png"
         }
       ]
+    },
+    {
+      "name": "Projects"
     },
     {
       "name": "Languages"
