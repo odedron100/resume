@@ -1,0 +1,55 @@
+{
+  "name": "Oded Ron",
+  "job": "Full Stack Developer",
+  "summary": "I’m a highly independent and diligent software developer with experience in the fields of client and server web development and UI design.\nMy main skills are Javascript (Vue & Vuex , React & Redux), CSS and Node.js.",
+  "pictureSrc": "./images/oded.jpg",
+  "sections": [
+    {
+      "name": "Education",
+      "items": [
+        {
+          "name": "Coding Academy",
+          "dateRange": {
+            "start": "2020-12-31T22:00:00.000Z",
+            "end": "2021-03-31T21:00:00.000Z"
+          }
+        },
+        {
+          "name": "Shoham Highschool",
+          "dateRange": {
+            "start": "2017-06-30T21:00:00.000Z",
+            "end": "2015-08-30T21:00:00.000Z"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Skills",
+      "items": [
+        {
+          "name": "Vue",
+          "projectsList": [
+            {"name": "Fiverr", "src": "www.github.com"},
+            {"name": "Mister Toy", "src": "www.github.com"}
+          ]
+        },
+        {
+          "name": "React",
+          "dateRange": {
+            "start": "2017-06-30T21:00:00.000Z",
+            "end": "2015-08-30T21:00:00.000Z"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Languages"
+    },
+    {
+      "name": "Hobbies"
+    },
+    {
+      "name": "Contact Me"
+    }
+  ]
+}

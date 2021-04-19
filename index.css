@@ -1,0 +1,120 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Roboto', 'Times New Roman', Times, serif;
+
+  --main-color: #17a2b8;
+  --picture-size: 200px;
+}
+
+.main-container .header {
+  background-color: var(--main-color);
+  color: white;
+  position: relative;
+  height: 310px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  padding: 10px 0;
+  margin-top: 5px;
+  margin-bottom: calc(var(--picture-size) * 0.5);
+}
+
+.main-container .name-container {
+  font-size: 40px;
+}
+
+.main-container .job-container {
+  font-size: 24px;
+  font-weight: 100;
+}
+
+.main-container .summary-container {
+  text-align: center;
+  padding: 10px 0;
+  font-size: 17px;
+}
+
+.main-container .picture {
+  height: var(--picture-size);
+  width: var(--picture-size);
+  background-size: 110%;
+  background-position: center;
+  transition: 0.3s background-size ease-in-out;
+  border-radius: 50%;
+  border: 5px solid white;
+  box-shadow: 0 1px 6px 0 rgb(32 33 36 / 28%);
+  position: absolute;
+  /* bottom: 100px; */
+  bottom: calc(var(--picture-size) * -0.5);
+}
+.main-container .picture:hover {
+  background-size: 120%;
+}
+
+.main-container .sections-container {
+  max-width: 700px;
+  margin: auto;
+}
+
+.main-container .sections-container .section-container {
+  padding: 15px;
+  border-left: 5px solid var(--main-color);
+  margin: 0 15px;
+}
+.main-container .sections-container .section-title {
+  text-transform: uppercase;
+  color: var(--main-color);
+  font-weight: 400;
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.main-container .sections-container .item-container {
+  position: relative;
+  padding: 20px 10px;
+}
+
+.main-container .sections-container .item-container::before {
+  content: ' ';
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  border: 5px solid var(--main-color);
+  background-color: white;
+  position: absolute;
+  left: -32px;
+  top: 0;
+}
+
+.main-container .sections-container .item-title {
+  font-size: 18px;
+  font-weight: bold;
+  padding: 10px 0;
+}
+
+@media (min-width:801px) {
+  .main-container .header {
+    height: 265px;
+  }
+
+  .main-container .header .summary-container {
+    max-width: 650px;
+  }
+}
+
+/* @keyframes name-animation {
+  0% {
+    letter-spacing: 0px;
+  }
+  50% {
+    letter-spacing: 3px;
+  }
+  100% {
+    letter-spacing: 0px;
+  }
+} */
