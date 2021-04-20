@@ -49,19 +49,19 @@ const init = async () => {
         });
         itemContainer.appendChild(itemDateRange);
       }
-      else if (item.skillSrc) {
-        const skillSrc = resumeUtils.createElement({ tagName: 'img', img: item.skillSrc.src, className: 'skillImg' });
+      else if (item.src) {
+        const skillSrc = resumeUtils.createElement({ tagName: 'img', img: item.src, className: 'skillImg' });
         itemContainer.appendChild(skillSrc);
       }
-      else if (item.projectLink) {
+      else if (item.link) {
         const projectItem = resumeUtils.createElement({ tagName: 'li', className: 'project-container' });
-        const projectLink = resumeUtils.createElement({ tagName: 'a', innerHTML: item.name, href: item.projectLink.link });
+        const projectLink = resumeUtils.createElement({ tagName: 'a', innerHTML: item.name, href: item.link });
 
         projectItem.appendChild(projectLink);
         itemContainer.appendChild(projectItem);
       }
       else if (item.hobbyDetails) {
-        const hobbyDetails = resumeUtils.createElement({ tagName: 'div', className: 'hobbyDetails', innerHTML: item.hobbyDetails.details });
+        const hobbyDetails = resumeUtils.createElement({ tagName: 'div', className: 'hobbyDetails', innerHTML: item.hobbyDetails });
         itemContainer.appendChild(hobbyDetails);
       }
       else if (item.details) {
