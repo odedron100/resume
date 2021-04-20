@@ -20,51 +20,57 @@ const init = async () => {
 
   data.sections.forEach(section => {
     console.log('section', section);
-    const sectionContainer = document.createElement('section');
-    sectionContainer.classList.add('section-container');
+    const sectionContainer = resumeUtils.createElement({ tagName: 'section', className: 'section-container' });
 
     // Setting the title
-    const sectionTitle = document.createElement('div');
-    console.log('sectionTitle', sectionTitle);
-    sectionTitle.classList.add('section-title');
-    sectionTitle.innerHTML = section.name;
+    const sectionTitle = resumeUtils.createElement({ tagName: 'div', className: 'section-title', innerHTML: section.name });
     sectionContainer.appendChild(sectionTitle);
 
     // Setting the items
     section.items && section.items.forEach(item => {
-      const itemContainer = document.createElement('div');
-      itemContainer.classList.add('item-container');
+      const itemContainer = resumeUtils.createElement({ tagName: 'div', className: 'item-container' });
+      if (item.type === 'timelineObject') {
+        itemContainer.classList.add('timelineObject');
+      } else if (item.type === 'skill') {
+        itemContainer.classList.add('skill');
+      }
 
       // Setting the item title
-      const itemTitle = document.createElement('div');
-      itemTitle.classList.add('item-title');
-      itemTitle.innerHTML = item.name;
-      itemContainer.appendChild(itemTitle);
+      if (!item.projectLink) {
+        const itemTitle = resumeUtils.createElement({ tagName: 'div', className: 'item-title', innerHTML: item.name });
+        itemContainer.appendChild(itemTitle);
+      }
 
       if (item.dateRange) {
         // Setting the item date range
-        const itemDateRange = document.createElement('div');
-        itemDateRange.classList.add('item-date-range');
-        console.log('resumeUtils', resumeUtils);
-        itemDateRange.innerHTML = `${resumeUtils.getDate(item.dateRange.start)}-${resumeUtils.getDate(item.dateRange.end)}`;
-        itemContainer.appendChild(itemDateRange);
-      } else if (item.projectsList) {
-        const projectsListContainer = document.createElement('ul');
-
-        item.projectsList.forEach(project => {
-          const projectItem = resumeUtils.createElement({ tagName: 'li', className: 'project-container' });
-          const projectLink = resumeUtils.createElement({ tagName: 'a', innerHTML: project.name, href: project.src });
-
-          projectItem.appendChild(projectLink);
-          projectsListContainer.appendChild(projectItem);
-          itemContainer.appendChild(projectsListContainer);
+        const itemDateRange = resumeUtils.createElement({
+          tagName: 'div', className: 'item-date-range',
+          innerHTML: `${resumeUtils.getDate(item.dateRange.start)}-${resumeUtils.getDate(item.dateRange.end)}`
         });
+        itemContainer.appendChild(itemDateRange);
+      }
+      else if (item.skillSrc) {
+        const skillSrc = resumeUtils.createElement({ tagName: 'img', img: item.skillSrc.src, className: 'skillImg' });
+        itemContainer.appendChild(skillSrc);
+      }
+      else if (item.projectLink) {
+        const projectItem = resumeUtils.createElement({ tagName: 'li', className: 'project-container' });
+        const projectLink = resumeUtils.createElement({ tagName: 'a', innerHTML: item.name, href: item.projectLink.link });
+
+        projectItem.appendChild(projectLink);
+        itemContainer.appendChild(projectItem);
+      }
+      else if (item.hobbyDetails) {
+        const hobbyDetails = resumeUtils.createElement({ tagName: 'div', className: 'hobbyDetails', innerHTML: item.hobbyDetails.details });
+        itemContainer.appendChild(hobbyDetails);
+      }
+      else if (item.details) {
+        const details = resumeUtils.createElement({ tagName: 'div', className: 'myDetails', innerHTML: item.details });
+        itemContainer.appendChild(details);
       }
 
       sectionContainer.appendChild(itemContainer);
     });
-
-    // section.projectsList &&
 
     sectionsContainer.appendChild(sectionContainer);
   })

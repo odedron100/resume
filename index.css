@@ -74,12 +74,49 @@ body {
   margin-bottom: 10px;
 }
 
-.main-container .sections-container .item-container {
+.main-container .sections-container .timelineObject {
   position: relative;
   padding: 20px 10px;
 }
 
-.main-container .sections-container .item-container::before {
+.main-container .sections-container .skill {
+  padding: 20px 10px;
+  margin-inline-start: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 200px;
+}
+
+.main-container .sections-container .skill .skillImg {
+  height: 70px;
+  width: 70px;
+  background-position: center;
+  object-fit: cover;
+}
+
+.main-container .sections-container .project-container {
+  padding: 10px;
+}
+
+.main-container .sections-container .hobbyDetails {
+  font-size: 15px;
+  font-weight: 300;
+}
+
+
+.main-container .sections-container .project-container a {
+  text-decoration: none;
+  color: black;
+  border-bottom: 1px solid white;
+  transition: border-bottom-color 0.3s;
+}
+
+.main-container .sections-container .project-container a:hover {
+  border-bottom-color:black;
+}
+
+.main-container .sections-container .timelineObject::before {
   content: ' ';
   border-radius: 50%;
   width: 20px;

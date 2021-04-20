@@ -6,7 +6,7 @@ window.resumeUtils = {
   },
 
   createElement: (options) => {
-    const { tagName, className, innerHTML, href } = options;
+    const { tagName, className, innerHTML, href, img } = options;
 
     const element = document.createElement(tagName);
     if (className) {
@@ -17,6 +17,9 @@ window.resumeUtils = {
     }
     if (href) {
       element.href = href;
+    }
+    if (img) {
+      element.src = img;
     }
 
     return element;
