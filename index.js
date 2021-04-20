@@ -1,6 +1,3 @@
-// import data from './data.json';
-// import data from './data';
-
 const init = async () => {
   const response = await fetch("./data.json");
   const data = await response.json();
@@ -36,8 +33,8 @@ const init = async () => {
       }
 
       // Setting the item title
-      if (!item.projectLink) {
-        const itemTitle = resumeUtils.createElement({ tagName: 'div', className: 'item-title', innerHTML: item.name });
+      if (!item.link) {
+        const itemTitle = resumeUtils.createElement({ tagName: 'div', className: 'item-title', innerHTML: item.name, icon: item.icon });
         itemContainer.appendChild(itemTitle);
       }
 
@@ -54,6 +51,7 @@ const init = async () => {
         itemContainer.appendChild(skillSrc);
       }
       else if (item.link) {
+        console.log('item.link', item.link);
         const projectItem = resumeUtils.createElement({ tagName: 'li', className: 'project-container' });
         const projectLink = resumeUtils.createElement({ tagName: 'a', innerHTML: item.name, href: item.link });
 
@@ -68,7 +66,6 @@ const init = async () => {
         const details = resumeUtils.createElement({ tagName: 'div', className: 'myDetails', innerHTML: item.details });
         itemContainer.appendChild(details);
       }
-
       sectionContainer.appendChild(itemContainer);
     });
 

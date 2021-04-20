@@ -5,9 +5,10 @@
 body {
   margin: 0;
   font-family: 'Roboto', 'Times New Roman', Times, serif;
-
+  --text-color: #333;
   --main-color: #17a2b8;
   --picture-size: 200px;
+  color:var(--text-color);
 }
 
 .main-container .header {
@@ -79,18 +80,28 @@ body {
   padding: 20px 10px;
 }
 
+.main-container .sections-container .item-date-range {
+  font-size: 15px;
+  font-weight: 300;
+  padding: 0 10px;
+}
+
 .main-container .sections-container .skill {
   padding: 20px 10px;
   margin-inline-start: 55px;
   display: flex;
+  flex-direction: row-reverse;
   align-items: center;
   justify-content: space-between;
   width: 200px;
 }
 
 .main-container .sections-container .skill .skillImg {
-  height: 70px;
-  width: 70px;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  padding: 10px;
+  border: 2px solid var(--main-color) ;
   background-position: center;
   object-fit: cover;
 }
@@ -102,12 +113,19 @@ body {
 .main-container .sections-container .hobbyDetails {
   font-size: 15px;
   font-weight: 300;
+  padding: 0 10px;
+}
+
+.main-container .sections-container .myDetails {
+  font-size: 15px;
+  font-weight: 300;
+  padding: 0 10px;
 }
 
 
 .main-container .sections-container .project-container a {
   text-decoration: none;
-  color: black;
+  color:var(--text-color);;
   border-bottom: 1px solid white;
   transition: border-bottom-color 0.3s;
 }
@@ -129,9 +147,9 @@ body {
 }
 
 .main-container .sections-container .item-title {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: bold;
-  padding: 10px 0;
+  padding: 10px;
 }
 
 @media (min-width:801px) {

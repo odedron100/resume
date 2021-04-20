@@ -71,32 +71,32 @@
         {
           "type": "regular",
           "name": "Fiverr clone",
-          "Link": "https://fixerr.herokuapp.com/#/"
+          "link": "https://fixerr.herokuapp.com/#/"
         },
         {
           "type": "regular",
           "name": "Chat",
-          "Link": "https://fixerr.herokuapp.com/#/"
+          "link": "https://fixerr.herokuapp.com/#/"
         },
         {
           "type": "regular",
           "name": "Mr Bitcoin",
-          "Link": "https://fixerr.herokuapp.com/#/"
+          "link": "https://fixerr.herokuapp.com/#/"
         },
         {
           "type": "regular",
           "name": "Appsus",
-          "Link": "https://fixerr.herokuapp.com/#/"
+          "link": "https://fixerr.herokuapp.com/#/"
         },
         {
           "type": "regular",
           "name": "Meme generator",
-          "Link": "https://fixerr.herokuapp.com/#/"
+          "link": "https://fixerr.herokuapp.com/#/"
         },
         {
           "type": "regular",
           "name": "Mine swepped",
-          "Link": "https://fixerr.herokuapp.com/#/"
+          "link": "https://fixerr.herokuapp.com/#/"
         }
       ]
     },
@@ -139,22 +139,26 @@
           {
             "type":"regular",
             "name":"Adderes",
-            "details":"Shoham, Israel"
+            "details":"Shoham, Israel",
+            "icon":"fas fa-map-marker-alt"
           },
           {
             "type":"regular",
             "name":"Phone",
-            "details":"+972 547671632"
+            "details":"+972 547671632",
+            "icon":"fas fa-phone"
           },
           {
             "type":"regular",
             "name":"Email",
-            "details":"odedron84@gmail.com"
+            "details":"odedron84@gmail.com",
+            "icon":"fas fa-envelope"
           },
           {
             "type":"regular",
             "name":"Linkedin",
-            "details":"https://www.linkedin.com/in/oded-ron-28692b89/"
+            "details":"https://www.linkedin.com/in/oded-ron-28692b89/",
+            "icon":"fab fa-linkedin"
           }
       ]
     }
