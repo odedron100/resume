@@ -85,17 +85,7 @@
         },
         {
           "type": "regular",
-          "name": "Appsus",
-          "link": "https://fixerr.herokuapp.com/#/"
-        },
-        {
-          "type": "regular",
           "name": "Meme generator",
-          "link": "https://fixerr.herokuapp.com/#/"
-        },
-        {
-          "type": "regular",
-          "name": "Mine swepped",
           "link": "https://fixerr.herokuapp.com/#/"
         }
       ]
@@ -159,6 +149,12 @@
             "name":"Linkedin",
             "details":"https://www.linkedin.com/in/oded-ron-28692b89/",
             "icon":"fab fa-linkedin"
+          },
+          {
+            "type":"regular",
+            "name":"Github",
+            "details":"https://github.com/odedron100",
+            "icon":"fab fa-github"
           }
       ]
     }

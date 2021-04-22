@@ -63,7 +63,12 @@ const init = async () => {
         itemContainer.appendChild(hobbyDetails);
       }
       else if (item.details) {
-        const details = resumeUtils.createElement({ tagName: 'div', className: 'myDetails', innerHTML: item.details });
+        let details;
+        if (item.name === 'Github' || item.name === 'Linkedin') {
+          details = resumeUtils.createElement({ tagName: 'a', className: 'myDetails', innerHTML: item.details, href: item.details });
+        } else {
+          details = resumeUtils.createElement({ tagName: 'div', className: 'myDetails', innerHTML: item.details });
+        }
         itemContainer.appendChild(details);
       }
       sectionContainer.appendChild(itemContainer);
