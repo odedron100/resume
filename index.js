@@ -1,3 +1,8 @@
+const START_SCROLL_ANIMATION = 0;
+const END_SCROLL_ANIMATION = 175;
+const HEADER_MIN_HEIGHT = 100;
+const HEADER_ORIGINAL_MARGIN_TOP = 5;
+
 const init = async () => {
   const response = await fetch("./data.json");
   const data = await response.json();
@@ -81,7 +86,33 @@ const init = async () => {
     });
 
     sectionsContainer.appendChild(sectionContainer);
+  });
+
+  // Init animation
+  const headerOriginalHeight = header.getBoundingClientRect().height;
+  const differenceBetweenMaxAndMinHeight = headerOriginalHeight - HEADER_MIN_HEIGHT;
+
+  console.log('header.getBoundingClientRect()', header.getBoundingClientRect());
+  document.addEventListener('scroll', (e) => {
+    const currentScroll = window.scrollY;
+    const animationStage = currentScroll / END_SCROLL_ANIMATION;
+
+    // Picture animation
+    picture.style.transform = `scale(${1 + animationStage * 0.3}) rotate(${20 * animationStage}deg)`
+    picture.style.opacity = 1 - animationStage;
+
+    // Summary animation
+    summaryContainer.style.opacity = 1 - animationStage;
+    summaryContainer.style.transform = `translateX(${100 * animationStage}px)`;
+
+    // Header animation
+    let newHeight = headerOriginalHeight - differenceBetweenMaxAndMinHeight * animationStage;
+    newHeight = newHeight > HEADER_MIN_HEIGHT ? newHeight : HEADER_MIN_HEIGHT;
+    header.style.height = `${newHeight}px`;
+    let newMarginTop = HEADER_ORIGINAL_MARGIN_TOP - HEADER_ORIGINAL_MARGIN_TOP * animationStage;
+    newMarginTop = newMarginTop > 0 ? newMarginTop : 0;
+    header.style.marginTop = `${newMarginTop}px`;
   })
 }
 
-init()
+init();
