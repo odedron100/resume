@@ -95,11 +95,13 @@
       "items":[
         {
           "type":"regular",
-          "name":"Hebrew"
+          "name":"Hebrew",
+          "description": "Native Speaker"
         },
         {
           "type":"regular",
-          "name":"English"
+          "name":"English",
+          "description": "Full Professional Proficiency"
         }
       ]
     },

@@ -6,7 +6,7 @@ window.resumeUtils = {
   },
 
   createElement: (options) => {
-    const { tagName, className, innerHTML, href, img, icon } = options;
+    const { tagName, className, innerHTML, href, img, icon, target } = options;
     const element = document.createElement(tagName);
     if (className) {
       element.classList.add(className);
@@ -19,6 +19,9 @@ window.resumeUtils = {
     }
     if (img) {
       element.src = img;
+    }
+    if (target) {
+      element.target = target;
     }
     if (innerHTML && icon) {
       element.innerHTML = innerHTML + ` <i class="${icon}"></i>`;

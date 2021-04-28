@@ -38,6 +38,12 @@ const init = async () => {
         itemContainer.appendChild(itemTitle);
       }
 
+      // Setting the description
+      if (item.description) {
+        const itemDescription = resumeUtils.createElement({ tagName: 'div', className: 'hobbyDetails', innerHTML: item.description });
+        itemContainer.appendChild(itemDescription);
+      }
+
       if (item.dateRange) {
         // Setting the item date range
         const itemDateRange = resumeUtils.createElement({
@@ -65,7 +71,7 @@ const init = async () => {
       else if (item.details) {
         let details;
         if (item.name === 'Github' || item.name === 'Linkedin') {
-          details = resumeUtils.createElement({ tagName: 'a', className: 'myDetails', innerHTML: item.details, href: item.details });
+          details = resumeUtils.createElement({ tagName: 'a', className: 'myDetails', innerHTML: item.details, href: item.details, target: '_blank' });
         } else {
           details = resumeUtils.createElement({ tagName: 'div', className: 'myDetails', innerHTML: item.details });
         }
