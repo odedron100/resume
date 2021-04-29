@@ -68,7 +68,7 @@ const init = async () => {
       }
       else if (item.link) {
         const projectItem = resumeUtils.createElement({ tagName: 'li', className: 'project-container' });
-        const projectLink = resumeUtils.createElement({ tagName: 'a', innerHTML: item.name, href: item.link });
+        const projectLink = resumeUtils.createElement({ tagName: 'a', innerHTML: item.name, href: item.link, target: '_blank' });
 
         projectItem.appendChild(projectLink);
         itemContainer.appendChild(projectItem);

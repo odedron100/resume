@@ -59,6 +59,7 @@ body {
   position: absolute;
   /* bottom: 100px; */
   bottom: calc(var(--picture-size) * -0.5);
+  pointer-events: none;
 }
 .main-container .picture:hover {
   background-size: 120%;
