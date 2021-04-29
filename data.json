@@ -111,17 +111,17 @@
         {
           "type":"regular",
           "name":"Soccer",
-          "hobbyDetails":"I love watching football games and have been part of a professional football team since the age of 7."
+          "description":"I love watching football games and have been part of a professional football team since the age of 7."
         },
         {
           "type":"regular",
           "name":"Video gameing",
-          "hobbyDetails":"computer gaming, sony playstation etc"
+          "description":"computer gaming, sony playstation etc"
         },
         {
           "type":"regular",
           "name":"Friends",
-          "hobbyDetails":""
+          "description":""
         }
       ]
     },
@@ -131,31 +131,31 @@
           {
             "type":"regular",
             "name":"Adderes",
-            "details":"Shoham, Israel",
+            "description":"Shoham, Israel",
             "icon":"fas fa-map-marker-alt"
           },
           {
             "type":"regular",
             "name":"Phone",
-            "details":"+972 547671632",
+            "description":"+972 547671632",
             "icon":"fas fa-phone"
           },
           {
             "type":"regular",
             "name":"Email",
-            "details":"odedron84@gmail.com",
+            "description":"odedron84@gmail.com",
             "icon":"fas fa-envelope"
           },
           {
             "type":"regular",
             "name":"Linkedin",
-            "details":"https://www.linkedin.com/in/oded-ron-28692b89/",
+            "description":"https://www.linkedin.com/in/oded-ron-28692b89/",
             "icon":"fab fa-linkedin"
           },
           {
             "type":"regular",
             "name":"Github",
-            "details":"https://github.com/odedron100",
+            "description":"https://github.com/odedron100",
             "icon":"fab fa-github"
           }
       ]

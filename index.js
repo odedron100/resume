@@ -21,7 +21,6 @@ const init = async () => {
   picture.style.backgroundImage = `url("${data.pictureSrc}")`;
 
   data.sections.forEach(section => {
-    console.log('section', section);
     const sectionContainer = resumeUtils.createElement({ tagName: 'section', className: 'section-container' });
 
     // Setting the title
@@ -45,7 +44,13 @@ const init = async () => {
 
       // Setting the description
       if (item.description) {
-        const itemDescription = resumeUtils.createElement({ tagName: 'div', className: 'hobbyDetails', innerHTML: item.description });
+        let itemDescription;
+        if (item.name === 'Github' || item.name === 'Linkedin') {
+          itemDescription = resumeUtils.createElement({ tagName: 'a', className: 'description', innerHTML: item.description, href: item.description, target: '_blank' });
+        }
+        else {
+          itemDescription = resumeUtils.createElement({ tagName: 'div', className: 'description', innerHTML: item.description });
+        }
         itemContainer.appendChild(itemDescription);
       }
 
@@ -62,25 +67,11 @@ const init = async () => {
         itemContainer.appendChild(skillSrc);
       }
       else if (item.link) {
-        console.log('item.link', item.link);
         const projectItem = resumeUtils.createElement({ tagName: 'li', className: 'project-container' });
         const projectLink = resumeUtils.createElement({ tagName: 'a', innerHTML: item.name, href: item.link });
 
         projectItem.appendChild(projectLink);
         itemContainer.appendChild(projectItem);
-      }
-      else if (item.hobbyDetails) {
-        const hobbyDetails = resumeUtils.createElement({ tagName: 'div', className: 'hobbyDetails', innerHTML: item.hobbyDetails });
-        itemContainer.appendChild(hobbyDetails);
-      }
-      else if (item.details) {
-        let details;
-        if (item.name === 'Github' || item.name === 'Linkedin') {
-          details = resumeUtils.createElement({ tagName: 'a', className: 'myDetails', innerHTML: item.details, href: item.details, target: '_blank' });
-        } else {
-          details = resumeUtils.createElement({ tagName: 'div', className: 'myDetails', innerHTML: item.details });
-        }
-        itemContainer.appendChild(details);
       }
       sectionContainer.appendChild(itemContainer);
     });
@@ -89,10 +80,9 @@ const init = async () => {
   });
 
   // Init animation
-  const headerOriginalHeight = header.getBoundingClientRect().height;
+  let headerOriginalHeight = header.getBoundingClientRect().height;
   const differenceBetweenMaxAndMinHeight = headerOriginalHeight - HEADER_MIN_HEIGHT;
 
-  console.log('header.getBoundingClientRect()', header.getBoundingClientRect());
   document.addEventListener('scroll', (e) => {
     const currentScroll = window.scrollY;
     const animationStage = currentScroll / END_SCROLL_ANIMATION;
@@ -113,6 +103,11 @@ const init = async () => {
     newMarginTop = newMarginTop > 0 ? newMarginTop : 0;
     header.style.marginTop = `${newMarginTop}px`;
   })
+
+  // window.addEventListener('resize', () => {
+  //   headerOriginalHeight = header.getBoundingClientRect().height;
+  //   header.style.height = `${headerOriginalHeight}px`;
+  // });
 }
 
 init();
