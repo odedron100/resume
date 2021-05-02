@@ -125,6 +125,7 @@ body {
   padding: 10px 20px;
   color: #333;
   text-decoration: none;
+  display: block;
 }
 
 .main-container .sections-container .item-container {
