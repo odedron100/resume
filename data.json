@@ -13,7 +13,8 @@
           "dateRange": {
             "start": "2020-12-31T22:00:00.000Z",
             "end": "2021-03-31T21:00:00.000Z"
-          }
+          },
+          "description":"This is a course where I learned the core of JavaScript, web development and Front-End frameworks such as React, Vue, etc.\nHere’s a link to the course website"
         },
         {
           "type": "timelineObject",
@@ -111,12 +112,12 @@
         {
           "type":"regular",
           "name":"Soccer",
-          "description":"I love watching football games and have been part of a professional football team since the age of 7."
+          "description":"I like watching football games and have been part of a professional football team since the age of 7."
         },
         {
           "type":"regular",
           "name":"Video gaming",
-          "description":"computer gaming, sony playstation etc"
+          "description":"Computer gaming, Sony Playstation, etc."
         }
       ]
     },

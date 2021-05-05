@@ -46,7 +46,7 @@ const init = async () => {
       if (item.description) {
         let itemDescription;
         if (item.name === 'Github' || item.name === 'Linkedin') {
-          itemDescription = resumeUtils.createElement({ tagName: 'a', className: 'description', innerHTML: item.description, href: item.description, target: '_blank' });
+          itemDescription = resumeUtils.createElement({ tagName: 'a', className: 'link-description', innerHTML: item.description, href: item.description, target: '_blank' });
         }
         else {
           itemDescription = resumeUtils.createElement({ tagName: 'div', className: 'description', innerHTML: item.description });

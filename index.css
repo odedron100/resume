@@ -128,6 +128,15 @@ body {
   display: block;
 }
 
+.main-container .sections-container .link-description  {
+  font-size: 15px;
+  font-weight: 300;
+  padding: 10px 20px;
+  color: #1976d2;
+  text-decoration: none;
+  display: block;
+}
+
 .main-container .sections-container .item-container {
   margin: 15px 0;
 }
@@ -146,6 +155,7 @@ body {
   color:var(--text-color);;
   border-bottom: 1px solid white;
   transition: border-bottom-color 0.3s;
+  color: #1976d2;
 }
 
 .main-container .sections-container .project-container a:hover {

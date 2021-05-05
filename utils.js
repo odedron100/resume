@@ -12,7 +12,12 @@ window.resumeUtils = {
       element.classList.add(className);
     }
     if (innerHTML && !icon) {
-      element.innerHTML = innerHTML;
+      if (innerHTML.includes("\n")) {
+        const txt = `<div>${innerHTML.split('\n').join('<div></div> <div></div>')}</div>`
+        element.innerHTML = txt;
+      } else {
+        element.innerHTML = innerHTML;
+      }
     }
     if (href) {
       element.href = href;
@@ -24,7 +29,7 @@ window.resumeUtils = {
       element.target = target;
     }
     if (innerHTML && icon) {
-      element.innerHTML = innerHTML + ` <i class="${icon}"></i>`;
+      element.innerHTML = `<i class="${icon}"></i> ` + innerHTML;
     }
     return element;
   }
