@@ -13,7 +13,7 @@ window.resumeUtils = {
     }
     if (innerHTML && !icon) {
       if (innerHTML.includes("\n")) {
-        const txt = `<div>${innerHTML.split('\n').join('<div></div> <div></div>')}</div>`
+        const txt = `<div style="display:inline">${innerHTML.split('\n').join('<div style="margin-top:15px"></div>')}</div>`
         element.innerHTML = txt;
       } else {
         element.innerHTML = innerHTML;

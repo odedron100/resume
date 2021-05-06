@@ -128,6 +128,13 @@ body {
   display: block;
 }
 
+.main-container .sections-container .web-link  {
+  display: inline-block;
+  margin-inline-start: 7px;
+  color: #1976d2;
+  text-decoration: none;
+}
+
 .main-container .sections-container .link-description  {
   font-size: 15px;
   font-weight: 300;

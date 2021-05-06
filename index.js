@@ -50,9 +50,18 @@ const init = async () => {
         }
         else {
           itemDescription = resumeUtils.createElement({ tagName: 'div', className: 'description', innerHTML: item.description });
+          if (item.webLinkName) {
+            const webLink = resumeUtils.createElement({ tagName: 'a', className: 'web-link', innerHTML: item.webLinkName, href: item.webLink, target: '_blank' });
+            itemDescription.appendChild(webLink);
+          }
         }
         itemContainer.appendChild(itemDescription);
       }
+
+      // else if (item.webLinkName) {
+      //   const webLink = resumeUtils.createElement({ tagName: 'a', className: 'web-link', innerHTML: item.webLinkName, href: item.webLink, target: '_blank' });
+      //   itemContainer.appendChild(webLink);
+      // }
 
       if (item.dateRange) {
         // Setting the item date range
@@ -62,11 +71,11 @@ const init = async () => {
         });
         itemContainer.appendChild(itemDateRange);
       }
-      else if (item.src) {
+      if (item.src) {
         const skillSrc = resumeUtils.createElement({ tagName: 'img', img: item.src, className: 'skillImg' });
         itemContainer.appendChild(skillSrc);
       }
-      else if (item.link) {
+      if (item.link) {
         const projectItem = resumeUtils.createElement({ tagName: 'li', className: 'project-container' });
         const projectLink = resumeUtils.createElement({ tagName: 'a', innerHTML: item.name, href: item.link, target: '_blank' });
 

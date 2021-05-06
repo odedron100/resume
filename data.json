@@ -14,7 +14,9 @@
             "start": "2020-12-31T22:00:00.000Z",
             "end": "2021-03-31T21:00:00.000Z"
           },
-          "description":"This is a course where I learned the core of JavaScript, web development and Front-End frameworks such as React, Vue, etc.\nHere’s a link to the course website"
+          "description":"This is a course where I learned the core of JavaScript, web development and Front-End frameworks such as React, Vue, etc.\nHere’s a link to the",
+          "webLinkName":"course website",
+          "webLink":"https://www.coding-academy.org/index.php?src=GoogleAds&cmp=Mar2020&adId=428485611586&adGrpId=100520531700&extClicked=&network=g&adPos=&keyword=coding%20academy&gclid=Cj0KCQjwp86EBhD7ARIsAFkgakjyRMAP2ouKzrLZoLn8YfzxG6P4S2kjjM4h9cK4LLaF34p0THp9IOMaAlB5EALw_wcB"
         },
         {
           "type": "timelineObject",
