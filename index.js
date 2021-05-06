@@ -42,6 +42,15 @@ const init = async () => {
         itemContainer.appendChild(itemTitle);
       }
 
+      if (item.link) {
+        const projectItem = resumeUtils.createElement({ tagName: 'li', className: 'project-container' });
+        const projectLink = resumeUtils.createElement({ tagName: 'a', innerHTML: item.name, href: item.link, target: '_blank' });
+
+        projectItem.appendChild(projectLink);
+        itemContainer.appendChild(projectItem);
+      }
+      sectionContainer.appendChild(itemContainer);
+
       // Setting the description
       if (item.description) {
         let itemDescription;
@@ -75,14 +84,6 @@ const init = async () => {
         const skillSrc = resumeUtils.createElement({ tagName: 'img', img: item.src, className: 'skillImg' });
         itemContainer.appendChild(skillSrc);
       }
-      if (item.link) {
-        const projectItem = resumeUtils.createElement({ tagName: 'li', className: 'project-container' });
-        const projectLink = resumeUtils.createElement({ tagName: 'a', innerHTML: item.name, href: item.link, target: '_blank' });
-
-        projectItem.appendChild(projectLink);
-        itemContainer.appendChild(projectItem);
-      }
-      sectionContainer.appendChild(itemContainer);
     });
 
     sectionsContainer.appendChild(sectionContainer);

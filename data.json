@@ -73,23 +73,27 @@
       "items": [
         {
           "type": "regular",
-          "name": "Fiverr clone",
-          "link": "https://fixerr.herokuapp.com/#/"
+          "name": "Fixerr",
+          "link": "https://fixerr.herokuapp.com/#/",
+          "description":"Fixerr is an app where freelancers can sell their services to everyone, This application is a Fiverr clone and done with Vue,Vuex,Sass,NodeJS and MongoDB technologies."
         },
         {
           "type": "regular",
           "name": "Chat",
-          "link": "https://odedron100.github.io/chat/"
+          "link": "https://odedron100.github.io/chat/",
+          "description":"Chat mechanism that can be added on top of websites, in which clients can get support from an agent (if available). On the other side, there's an agent system in which each agent can manage conversations with multiple clients."
         },
         {
           "type": "regular",
           "name": "Mr Bitcoin",
-          "link": "https://odedron100.github.io/mr-bitcoin/"
+          "link": "https://odedron100.github.io/mr-bitcoin/",
+          "description":"By a bitcoin API, you can use this website to convert your own money to its 'bitcoin value' and then transfer it to contacts. You can also view your transfer history. Of course, no actual transactions are included."
         },
         {
           "type": "regular",
           "name": "Meme generator",
-          "link": "https://odedron100.github.io/Meme-generator/"
+          "link": "https://odedron100.github.io/Meme-generator/",
+          "description":"Create your own meme, with default pictures, or by uploading yours, and add texts and designs. On this website, I also use canvas."
         }
       ]
     },
