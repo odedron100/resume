@@ -43,7 +43,7 @@ body {
 
 .main-container .summary-container {
   text-align: center;
-  padding: 10px 0;
+  padding: 10px 10px;
   font-size: 17px;
 }
 
@@ -117,6 +117,7 @@ body {
 
 .main-container .sections-container .project-container {
   padding: 10px;
+  list-style: none;
 }
 
 .main-container .sections-container .description  {

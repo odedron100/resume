@@ -75,7 +75,7 @@
           "type": "regular",
           "name": "Fixerr",
           "link": "https://fixerr.herokuapp.com/#/",
-          "description":"Fixerr is an app where freelancers can sell their services to everyone, This application is a Fiverr clone and done with Vue,Vuex,Sass,NodeJS and MongoDB technologies."
+          "description":"Fixerr is an app where freelancers can sell their services to everyone, This application is a Fiverr clone and was implemented with Vue,Vuex,Sass,NodeJS and MongoDB technologies."
         },
         {
           "type": "regular",
