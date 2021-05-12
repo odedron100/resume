@@ -67,6 +67,12 @@ const init = async () => {
         itemContainer.appendChild(itemDescription);
       }
 
+      if (item.tags) {
+        const tagsSkill = resumeUtils.createElement({ tagName: 'div', className: 'tag', innerHTML: item.tags });
+        itemContainer.appendChild(tagsSkill);
+      }
+      sectionContainer.appendChild(itemContainer);
+
       // else if (item.webLinkName) {
       //   const webLink = resumeUtils.createElement({ tagName: 'a', className: 'web-link', innerHTML: item.webLinkName, href: item.webLink, target: '_blank' });
       //   itemContainer.appendChild(webLink);

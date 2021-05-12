@@ -109,7 +109,7 @@ body {
   height: 40px;
   width: 40px;
   border-radius: 50%;
-  padding: 5px;
+  padding: 2px;
   border: 2px solid var(--main-color) ;
   background-position: center;
   object-fit: cover;
@@ -123,6 +123,15 @@ body {
 .main-container .sections-container .description  {
   font-size: 15px;
   font-weight: 300;
+  padding: 10px 20px;
+  color: #333;
+  text-decoration: none;
+  display: block;
+}
+
+.main-container .sections-container .tag  {
+  font-size: 15px;
+  font-weight: 700;
   padding: 10px 20px;
   color: #333;
   text-decoration: none;
