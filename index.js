@@ -68,8 +68,12 @@ const init = async () => {
       }
 
       if (item.tags) {
-        const tagsSkill = resumeUtils.createElement({ tagName: 'div', className: 'tag', innerHTML: item.tags });
-        itemContainer.appendChild(tagsSkill);
+        const tagsContainer = resumeUtils.createElement({ tagName: 'div', className: 'tags-container' });
+        item.tags.forEach(tag => {
+          const tagElement = resumeUtils.createElement({ tagName: 'span', className: 'tag', innerHTML: tag });
+          tagsContainer.appendChild(tagElement);
+        })
+        itemContainer.appendChild(tagsContainer);
       }
       sectionContainer.appendChild(itemContainer);
 

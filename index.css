@@ -106,8 +106,8 @@ body {
 }
 
 .main-container .sections-container .skill .skillImg {
-  height: 40px;
-  width: 40px;
+  height: 50px;
+  width: 50px;
   border-radius: 50%;
   padding: 2px;
   border: 2px solid var(--main-color) ;
@@ -129,13 +129,24 @@ body {
   display: block;
 }
 
+.main-container .sections-container .tags-container  {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 20px;
+}
+
 .main-container .sections-container .tag  {
-  font-size: 15px;
+  font-size: 12px;
   font-weight: 700;
-  padding: 10px 20px;
+  padding: 5px 10px;
   color: #333;
   text-decoration: none;
   display: block;
+  background-color: var(--main-color);
+  color: white;
+  border-radius: 5px;
+  margin-top: 5px;
+  margin-right: 5px;
 }
 
 .main-container .sections-container .web-link  {
