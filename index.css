@@ -34,6 +34,8 @@ body {
 
 .main-container .name-container {
   font-size: 40px;
+  font-family: 'Open Sans', sans-serif;
+  letter-spacing: -1px;
 }
 
 .main-container .job-container {
@@ -187,6 +189,9 @@ body {
   border-bottom: 1px solid white;
   transition: border-bottom-color 0.3s;
   color: #1976d2;
+  font-style: italic;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 18px;
 }
 
 .main-container .sections-container .project-container a:hover {
@@ -209,6 +214,8 @@ body {
   font-size: 16px;
   font-weight: bold;
   padding: 10px 20px;
+  font-family: 'Open Sans', sans-serif;
+  font-style: italic;
 }
 
 @media (min-width:801px) {
