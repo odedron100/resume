@@ -29,7 +29,7 @@ const init = async () => {
 
     // Setting the items
     section.items && section.items.forEach(item => {
-      const itemContainer = resumeUtils.createElement({ tagName: 'div', className: 'item-container' });
+      let itemContainer = resumeUtils.createElement({ tagName: 'div', className: 'item-container' });
       if (item.type === 'timelineObject') {
         itemContainer.classList.add('timelineObject');
       } else if (item.type === 'skill') {
