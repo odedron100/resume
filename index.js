@@ -37,9 +37,13 @@ const init = async () => {
       }
 
       // Setting the item title
-      if (!item.link) {
+      if (!item.link && !item.companyImg) {
         const itemTitle = resumeUtils.createElement({ tagName: 'div', className: 'item-title', innerHTML: item.name, icon: item.icon });
-        itemContainer.appendChild(itemTitle);
+        itemContainer.appendChild(itemTitle)
+      }
+      if (item.companyImg) {
+        const companySrc = resumeUtils.createElement({ tagName: 'img', img: item.companyImg, className: 'company-img' });
+        itemContainer.appendChild(companySrc);
       }
 
       if (item.link) {
@@ -67,6 +71,15 @@ const init = async () => {
         itemContainer.appendChild(itemDescription);
       }
 
+      if (item.points) {
+        const pointsContainer = resumeUtils.createElement({ tagName: 'ul', className: 'points-container' });
+        item.points.forEach(point => {
+          const pointElement = resumeUtils.createElement({ tagName: 'li', className: 'point', innerHTML: point });
+          pointsContainer.appendChild(pointElement);
+        })
+        itemContainer.appendChild(pointsContainer);
+      }
+
       if (item.tags) {
         const tagsContainer = resumeUtils.createElement({ tagName: 'div', className: 'tags-container' });
         item.tags.forEach(tag => {
@@ -84,12 +97,17 @@ const init = async () => {
 
       if (item.dateRange) {
         // Setting the item date range
+        const endDateRange = typeof item.dateRange.end === 'string' ? resumeUtils.getDate(item.dateRange.end) : 'Precent';
         const itemDateRange = resumeUtils.createElement({
           tagName: 'div', className: 'item-date-range',
-          innerHTML: `${resumeUtils.getDate(item.dateRange.start)}-${resumeUtils.getDate(item.dateRange.end)}`
+          innerHTML: `${resumeUtils.getDate(item.dateRange.start)} - ${endDateRange}`
         });
         itemContainer.appendChild(itemDateRange);
       }
+      // if (item.companyImg) {
+      //   const companySrc = resumeUtils.createElement({ tagName: 'img', img: item.companyImg, className: 'companyImg' });
+      //   itemContainer.appendChild(companySrc);
+      // }
       if (item.src) {
         const skillSrc = resumeUtils.createElement({ tagName: 'img', img: item.src, className: 'skillImg' });
         itemContainer.appendChild(skillSrc);
@@ -124,10 +142,6 @@ const init = async () => {
     header.style.marginTop = `${newMarginTop}px`;
   })
 
-  // window.addEventListener('resize', () => {
-  //   headerOriginalHeight = header.getBoundingClientRect().height;
-  //   header.style.height = `${headerOriginalHeight}px`;
-  // });
 }
 
 init();
