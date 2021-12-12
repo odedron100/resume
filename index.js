@@ -37,15 +37,16 @@ const init = async () => {
       }
 
       // Setting the item title
-      if (!item.link && !item.companyImg) {
+      const companyContainer = resumeUtils.createElement({ tagName: 'div', className: 'company-container' })
+      if (!item.link) {
         const itemTitle = resumeUtils.createElement({ tagName: 'div', className: 'item-title', innerHTML: item.name, icon: item.icon });
-        itemContainer.appendChild(itemTitle)
+        companyContainer.appendChild(itemTitle)
       }
       if (item.companyImg) {
-        const companySrc = resumeUtils.createElement({ tagName: 'img', img: item.companyImg, className: 'company-img' });
-        itemContainer.appendChild(companySrc);
+        const companySrc = resumeUtils.createElement({ tagName: 'img', img: item.companyImg, className: 'skill-img' });
+        companyContainer.appendChild(companySrc)
       }
-
+      itemContainer.appendChild(companyContainer);
       if (item.link) {
         const projectItem = resumeUtils.createElement({ tagName: 'li', className: 'project-container' });
         const projectLink = resumeUtils.createElement({ tagName: 'a', innerHTML: item.name, href: item.link, target: '_blank' });
@@ -109,7 +110,7 @@ const init = async () => {
       //   itemContainer.appendChild(companySrc);
       // }
       if (item.src) {
-        const skillSrc = resumeUtils.createElement({ tagName: 'img', img: item.src, className: 'skillImg' });
+        const skillSrc = resumeUtils.createElement({ tagName: 'img', img: item.src, className: 'skill-img' });
         itemContainer.appendChild(skillSrc);
       }
     });

@@ -106,23 +106,29 @@ body {
   width: 33%;
 }
 
-.main-container .sections-container .skill .skillImg {
+.skill-img {
   height: 65px;
   width: 65px;
   border-radius: 50%;
   padding: 2px;
   border: 2px solid var(--main-color) ;
   background-position: center;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .main-container .sections-container .skill .item-title {
   padding: 10px 0;
+  width: 100%;
 }
 
 .main-container .sections-container .project-container {
   padding: 10px;
   list-style: none;
+}
+
+.main-container .section-container .company-container{
+  display: flex;
+  align-items: center;
 }
 
 .main-container .sections-container .description  {
