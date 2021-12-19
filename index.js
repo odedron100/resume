@@ -58,7 +58,10 @@ const init = async () => {
 
       if (item.dateRange) {
         // Setting the item date range
-        const endDateRange = typeof item.dateRange.end === 'string' ? resumeUtils.getDate(item.dateRange.end) : 'Present';
+        let endDateRange = ' ';
+        if (item.dateRange.end) {
+          endDateRange = typeof item.dateRange.end === 'string' ? resumeUtils.getDate(item.dateRange.end) : 'Present';
+        }
         const itemDateRange = resumeUtils.createElement({
           tagName: 'div', className: 'item-date-range',
           innerHTML: `${resumeUtils.getDate(item.dateRange.start)} - ${endDateRange}`
