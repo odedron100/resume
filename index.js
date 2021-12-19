@@ -38,13 +38,13 @@ const init = async () => {
 
       // Setting the item title
       const companyContainer = resumeUtils.createElement({ tagName: 'div', className: 'company-container' })
-      if (!item.link) {
-        const itemTitle = resumeUtils.createElement({ tagName: 'div', className: 'item-title', innerHTML: item.name, icon: item.icon });
-        companyContainer.appendChild(itemTitle)
-      }
       if (item.companyImg) {
         const companySrc = resumeUtils.createElement({ tagName: 'img', img: item.companyImg, className: 'skill-img' });
         companyContainer.appendChild(companySrc)
+      }
+      if (!item.link) {
+        const itemTitle = resumeUtils.createElement({ tagName: 'div', className: 'item-title', innerHTML: item.name, icon: item.icon });
+        companyContainer.appendChild(itemTitle)
       }
       itemContainer.appendChild(companyContainer);
       if (item.link) {
@@ -55,6 +55,16 @@ const init = async () => {
         itemContainer.appendChild(projectItem);
       }
       sectionContainer.appendChild(itemContainer);
+
+      if (item.dateRange) {
+        // Setting the item date range
+        const endDateRange = typeof item.dateRange.end === 'string' ? resumeUtils.getDate(item.dateRange.end) : 'Present';
+        const itemDateRange = resumeUtils.createElement({
+          tagName: 'div', className: 'item-date-range',
+          innerHTML: `${resumeUtils.getDate(item.dateRange.start)} - ${endDateRange}`
+        });
+        itemContainer.appendChild(itemDateRange);
+      }
 
       // Setting the description
       if (item.description) {
@@ -96,15 +106,6 @@ const init = async () => {
       //   itemContainer.appendChild(webLink);
       // }
 
-      if (item.dateRange) {
-        // Setting the item date range
-        const endDateRange = typeof item.dateRange.end === 'string' ? resumeUtils.getDate(item.dateRange.end) : 'Precent';
-        const itemDateRange = resumeUtils.createElement({
-          tagName: 'div', className: 'item-date-range',
-          innerHTML: `${resumeUtils.getDate(item.dateRange.start)} - ${endDateRange}`
-        });
-        itemContainer.appendChild(itemDateRange);
-      }
       // if (item.companyImg) {
       //   const companySrc = resumeUtils.createElement({ tagName: 'img', img: item.companyImg, className: 'companyImg' });
       //   itemContainer.appendChild(companySrc);
@@ -120,6 +121,7 @@ const init = async () => {
 
   // Init animation
   let headerOriginalHeight = header.getBoundingClientRect().height;
+  console.log('headerOriginalHeight', headerOriginalHeight);
   const differenceBetweenMaxAndMinHeight = headerOriginalHeight - HEADER_MIN_HEIGHT;
 
   document.addEventListener('scroll', (e) => {

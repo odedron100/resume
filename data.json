@@ -1,7 +1,7 @@
 {
   "name": "Oded Ron",
   "job": "Full Stack Developer",
-  "summary": "I’m a highly independent and diligent software developer with experience in the fields of client and server web development and UI design.\nMy main skills are Javascript (Vue & Vuex , React & Redux), CSS and Node.js.",
+  "summary": "I’m a highly independent and diligent software developer with experience in the fields of client and server web development and UI design.\nMy main skills are Javascript (Vue & Vuex , React & Redux, Angular), CSS and Node.js.",
   "pictureSrc": "./images/oded.jpg",
   "sections": [
     {
@@ -13,6 +13,8 @@
           "points": [
             "Development of projects for companies from scratch",
             "Utillizing Angular typescript and Vanilla javascript",
+            "Helps characterize and build the system",
+            "Adding features to the system independently",
             "Utillizing umbraco system",
             "Defintion of user requirementsband UX/UI design"
           ],
@@ -121,7 +123,7 @@
       ]
     },
     {
-      "name": "Projects",
+      "name": "Projects at home",
       "items": [
         {
           "type": "regular",
