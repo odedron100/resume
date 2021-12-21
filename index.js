@@ -59,9 +59,9 @@ const init = async () => {
       if (item.dateRange) {
         // Setting the item date range
         let endDateRange = ' ';
-        if (item.dateRange.end) {
-          endDateRange = typeof item.dateRange.end === 'string' ? resumeUtils.getDate(item.dateRange.end) : 'Present';
-        }
+
+        endDateRange = item.dateRange.end ? resumeUtils.getDate(item.dateRange.end) : 'Present';
+
         const itemDateRange = resumeUtils.createElement({
           tagName: 'div', className: 'item-date-range',
           innerHTML: `${resumeUtils.getDate(item.dateRange.start)} - ${endDateRange}`
@@ -104,15 +104,6 @@ const init = async () => {
       }
       sectionContainer.appendChild(itemContainer);
 
-      // else if (item.webLinkName) {
-      //   const webLink = resumeUtils.createElement({ tagName: 'a', className: 'web-link', innerHTML: item.webLinkName, href: item.webLink, target: '_blank' });
-      //   itemContainer.appendChild(webLink);
-      // }
-
-      // if (item.companyImg) {
-      //   const companySrc = resumeUtils.createElement({ tagName: 'img', img: item.companyImg, className: 'companyImg' });
-      //   itemContainer.appendChild(companySrc);
-      // }
       if (item.src) {
         const skillSrc = resumeUtils.createElement({ tagName: 'img', img: item.src, className: 'skill-img' });
         itemContainer.appendChild(skillSrc);
@@ -124,10 +115,14 @@ const init = async () => {
 
   // Init animation
   let headerOriginalHeight = header.getBoundingClientRect().height;
-  console.log('headerOriginalHeight', headerOriginalHeight);
   const differenceBetweenMaxAndMinHeight = headerOriginalHeight - HEADER_MIN_HEIGHT;
+  var scheduledAnimationFrame;
+  // const readAndUpdatePage = () => {
+  //   console.log('read and update');
+  //   scheduledAnimationFrame = false;
+  // }
 
-  document.addEventListener('scroll', (e) => {
+  const changeHeaderStyling = () => {
     const currentScroll = window.scrollY;
     const animationStage = currentScroll / END_SCROLL_ANIMATION;
 
@@ -146,8 +141,11 @@ const init = async () => {
     let newMarginTop = HEADER_ORIGINAL_MARGIN_TOP - HEADER_ORIGINAL_MARGIN_TOP * animationStage;
     newMarginTop = newMarginTop > 0 ? newMarginTop : 0;
     header.style.marginTop = `${newMarginTop}px`;
-  })
+  }
 
+  document.addEventListener('scroll', (e) => {
+    window.requestAnimationFrame(changeHeaderStyling);
+  })
 }
 
 init();
