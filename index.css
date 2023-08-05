@@ -8,8 +8,8 @@ body {
   --text-color: #333;
   --main-color: #17a2b8;
   --picture-size: 200px;
-  --header-height-desktop: 290px;
-  --header-height-mobile: 310px;
+  --header-height-desktop: 320px;
+  --header-height-mobile: 380px;
   color:var(--text-color);
 }
 
